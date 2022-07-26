@@ -1,0 +1,96 @@
+	Java doesn't use pass-by-reference
+	Primitive or reference variable , they use pass-by-variable-value or pass-by-value
+
+	everytime the bits in the variable are copied
+
+	JAVA USES PASS-BY-VALUE
+
+	for primitives - bits of value are copied
+	for object - bits representing the way to reach the object in heap are copied
+
+	The called method can't change the caller's variable, 
+		although for object reference variables, the called method can change the object the variable it referred to.
+		
+	The called method can't reassign the caller's original reference variable and make it refer to a different object or null.
+
+
+Shadowing A Variable
+
+	Shadowing involves reusing a variable name that's already been declared somewhere else.
+	Hiding a previously declared variable
+	
+	
+Garbage Collection
+	The heap is that part of memory where Java objects live, and it's the one and only part
+		of memory that is in any way involved in the garbage collection process.
+	
+	There is always only one heap.
+	
+	"Delete any objects which are not reachable by java program"
+	
+	JVM controls GC.
+	
+	object is eligible for collection when no live thread can access it.
+	
+	How To Explicitly Make Code Eligible For Garbage Collection
+		Nulling a Reference
+		Reassigning a Reference Variable
+		Isolating a Reference
+		Forcing Garbage Collection
+		
+
+Equality of Variables and References by (==)
+	The equality operator == checks for the value of bits of the primitives or the reference variables.
+	
+	i.e. a=5 & b=5 so a==b will be true
+	     c=new Object() & d=c so both c & d refer to same object therefore c==d will also be true
+		 
+		 
+	The == operator doesn't check if the objects are meaningfully equal.
+	
+
+Equality of Objects by equals() method
+	The equals() method is a method present in the Object class and therefore it can be overriden by all classes that individuals creates.
+	By overriding you can make your logic for comparing the equality of that class' objects.
+	
+	The equals() method in class Object
+		It works same as == operator. If two reference point to same object it returns true. 
+		If both reference point to different objects even if the values are same it will return false.
+		
+	The equals() method in class String
+		It has been overriden.
+		When used to compare two strings it returns true when value is same and with same case (It is case sensitive)
+			i.e. Hello and hello are not same.
+		
+		
+Equality for Enums
+	Once an enum is declared its not expandable.
+	At runtime, ther's no way to make additional enum constants.
+	You can have as many reference as you want.
+	Equality can be checked by either == operator or equals() method.
+	
+
+InstanceOf Operator
+	InstanceOf operator is used for object reference only.
+	Used to check whether an object is of a particular type.
+	Even if the object being tested is not an actual instantiation of the class type on the right side of the operator,
+		instanceOf will still return true if the object being compared is assignment compatible with the type on the right.
+	You can test object reference against its own class type or any of its superclasses.
+	
+	InstanceOf can be used to test for indirect implementation of interface.
+	Indirect implementation refers to when one of an object's superclasses implements an interface, 
+		but the actual class of the instance does not.
+		
+	Test of null reference is an instance of a class is always false.
+	
+	You can't use instanceOf operator to test across two different class hierarchies.
+	
+	Arrays are objects therefore array instanceOf Object is always true even if array is group of primitives.
+	
+Exclusive OR (^)
+	It checks both left and right side just like & and |.
+	For the result to be true exaclty one side should be true.
+	
+Boolean Invert(!)
+	It returns opposite of the value.
+	
